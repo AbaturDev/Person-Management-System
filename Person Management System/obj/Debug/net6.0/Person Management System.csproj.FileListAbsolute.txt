@@ -1,0 +1,15 @@
+C:\Users\alek\OneDrive\Desktop\studia\programowanie\C#\Person Management System\Person Management System\bin\Debug\net6.0\Person Management System.exe
+C:\Users\alek\OneDrive\Desktop\studia\programowanie\C#\Person Management System\Person Management System\bin\Debug\net6.0\Person Management System.deps.json
+C:\Users\alek\OneDrive\Desktop\studia\programowanie\C#\Person Management System\Person Management System\bin\Debug\net6.0\Person Management System.runtimeconfig.json
+C:\Users\alek\OneDrive\Desktop\studia\programowanie\C#\Person Management System\Person Management System\bin\Debug\net6.0\Person Management System.dll
+C:\Users\alek\OneDrive\Desktop\studia\programowanie\C#\Person Management System\Person Management System\bin\Debug\net6.0\Person Management System.pdb
+C:\Users\alek\OneDrive\Desktop\studia\programowanie\C#\Person Management System\Person Management System\obj\Debug\net6.0\Person Management System.csproj.AssemblyReference.cache
+C:\Users\alek\OneDrive\Desktop\studia\programowanie\C#\Person Management System\Person Management System\obj\Debug\net6.0\Person Management System.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alek\OneDrive\Desktop\studia\programowanie\C#\Person Management System\Person Management System\obj\Debug\net6.0\Person Management System.AssemblyInfoInputs.cache
+C:\Users\alek\OneDrive\Desktop\studia\programowanie\C#\Person Management System\Person Management System\obj\Debug\net6.0\Person Management System.AssemblyInfo.cs
+C:\Users\alek\OneDrive\Desktop\studia\programowanie\C#\Person Management System\Person Management System\obj\Debug\net6.0\Person Management System.csproj.CoreCompileInputs.cache
+C:\Users\alek\OneDrive\Desktop\studia\programowanie\C#\Person Management System\Person Management System\obj\Debug\net6.0\Person Management System.dll
+C:\Users\alek\OneDrive\Desktop\studia\programowanie\C#\Person Management System\Person Management System\obj\Debug\net6.0\refint\Person Management System.dll
+C:\Users\alek\OneDrive\Desktop\studia\programowanie\C#\Person Management System\Person Management System\obj\Debug\net6.0\Person Management System.pdb
+C:\Users\alek\OneDrive\Desktop\studia\programowanie\C#\Person Management System\Person Management System\obj\Debug\net6.0\Person Management System.genruntimeconfig.cache
+C:\Users\alek\OneDrive\Desktop\studia\programowanie\C#\Person Management System\Person Management System\obj\Debug\net6.0\ref\Person Management System.dll
