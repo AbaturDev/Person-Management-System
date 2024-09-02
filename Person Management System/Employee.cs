@@ -15,5 +15,10 @@ namespace PersonManagmentSystem
         {
             this.card_number = card_number;
         }
+
+        public override void print()
+        {
+            Console.WriteLine($"{name} {surename}, {type} -> id: {card_number}, pesel: {pesel}");
+        }
     }
 }

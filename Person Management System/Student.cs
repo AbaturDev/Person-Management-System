@@ -15,5 +15,10 @@ namespace PersonManagmentSystem
         {
             this.index = index;
         }
+
+        public override void print()
+        {
+            Console.WriteLine($"{name} {surename}, {type} -> index: {index}, pesel: {pesel}");
+        }
     }
 }

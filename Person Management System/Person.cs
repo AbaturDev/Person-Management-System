@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PersonManagmentSystem
 {
-    internal abstract class Person : Indefible
+    internal abstract class Person
     {
         protected string name { get; set; }
         protected string surename { get; set; }
@@ -22,23 +22,23 @@ namespace PersonManagmentSystem
             this.pesel = pesel;
         }
 
-        /// <summary>
-        /// Method to check if pesel is correct
-        /// </summary>
-        /// <param name="pesel"></param>
-        /// <returns>
-        /// "-1" - incorrect 
-        /// "0" - correct
-        /// </returns>
-        public int setPesel(string pesel)
+        private bool isValidPesel(string pesel)
         {
             if(pesel.Length != 11)
             {
-                //incorrect
-                return -1;
+                return false;
+            }
+            return true;
+        }
+
+        public void setPesel(string pesel)
+        {
+            if(!isValidPesel(pesel))
+            {
+                Console.WriteLine("Incorrect pesel");
+                return;
             }
             this.pesel = pesel;
-            return 0;   //correct
         }
         public string getPesel()
         {
@@ -55,5 +55,6 @@ namespace PersonManagmentSystem
             return pesel;
         }
 
+        public abstract void print();
     }
 }
