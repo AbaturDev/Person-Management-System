@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace PersonManagmentSystem
 {
@@ -33,7 +34,7 @@ namespace PersonManagmentSystem
             {
                 element.print();
             }
-            Console.WriteLine("\tThere are" + getPersonsCount() + " people on the list");
+            Console.WriteLine("There are " + getPersonsCount() + " people on the list");
         }
 
         public void displayStudents()
@@ -44,7 +45,7 @@ namespace PersonManagmentSystem
             {
                 element.print();
             }
-            Console.WriteLine("\tThere are" + getStudentsCount() + " students on the list");
+            Console.WriteLine("There are " + getStudentsCount() + " students on the list");
         }
 
         public void displayEmployees()
@@ -55,7 +56,7 @@ namespace PersonManagmentSystem
             {
                 element.print();
             }
-            Console.WriteLine("\tThere are" + getEmployeeCount() + " employees on the list");
+            Console.WriteLine("There are " + getEmployeeCount() + " employees on the list");
 
         }
 
@@ -74,9 +75,63 @@ namespace PersonManagmentSystem
             return persons.Where(e => e.getType() == "Employee").Count();
         }
 
-        /*
-         To add:
-        save and load from the file
-         */
+        /// <summary>
+        /// Method to save the list to the .txt file
+        /// Method overrite the previous list(file)
+        /// </summary>
+        public void SaveToFile()
+        {
+            using(StreamWriter writer = new StreamWriter("list_file.txt", false))
+            {
+                foreach(var element in persons)
+                {
+                    writer.WriteLine(element.ToString());
+                }
+            }
+        }
+
+        /// <summary>
+        /// Method to load the list from the file. Method add people from the file at the end of the current list.
+        /// </summary>
+        public void LoadFromFile()
+        {
+            if(!File.Exists("list_file.txt"))
+            {
+                Console.WriteLine("File does not exist! Save the list first");
+                return;
+            }
+
+            List<Person> list = new List<Person>();
+
+            using(StreamReader reader = new StreamReader("list_file.txt"))
+            {
+                string line = default;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    var temp_array = line.Split(";");
+
+                    string name = temp_array[0];
+                    string surename = temp_array[1];
+                    string pesel = temp_array[2];
+                    string id = temp_array[3];
+                    string type = temp_array[4];
+
+                    if(type == "Student")
+                    {
+                        list.Add(new Student(name, surename, type, pesel, id));
+                    }
+                    else if(type == "Employee")
+                    {
+                        list.Add(new Employee(name, surename, type, pesel, id));
+                    }
+                    else
+                    {
+                        throw new Exception("Error: Invalid type of Person. Can not load this type to the list");
+                    }
+
+                }
+            }
+            persons.AddRange(list);
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,9 +9,10 @@ namespace PersonManagmentSystem
 {
     internal abstract class Person
     {
-        protected string name { get; set; }
-        protected string surename { get; set; }
-        protected string type { get; set; }
+        public string name { get; set; }
+        public string surename { get; set; }
+        public string type { get; set; }
+
         protected string pesel;
 
         public Person() : this("Name", "Surename", "Person", "00000000000") { }
@@ -22,21 +24,18 @@ namespace PersonManagmentSystem
             this.pesel = pesel;
         }
 
-        private bool isValidPesel(string pesel)
-        {
-            if(pesel.Length != 11)
-            {
-                return false;
-            }
-            return true;
-        }
-
+        /// <summary>
+        /// Method to set pesel for person. Throw exception in case of wrong lenght of pesel
+        /// </summary>
         public void setPesel(string pesel)
         {
-            if(!isValidPesel(pesel))
+            if(pesel.Length > 11)
             {
-                Console.WriteLine("Incorrect pesel");
-                return;
+                throw new Exception("Pesel is too long");
+            }
+            else if(pesel.Length < 11)
+            {
+                throw new Exception("Pesel is too short");
             }
             this.pesel = pesel;
         }
@@ -50,11 +49,8 @@ namespace PersonManagmentSystem
             return type;
         }
 
-        public string getId()
-        {
-            return pesel;
-        }
-
         public abstract void print();
+        public override abstract string ToString();
+
     }
 }

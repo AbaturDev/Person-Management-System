@@ -8,7 +8,7 @@ namespace PersonManagmentSystem
 {
     internal class Employee : Person
     {
-        private string card_number { get; set; }
+        public string card_number { get; set; }
 
         public Employee() : this("Name", "Surename", "Employee", "00000000000", "000000") { }
         public Employee(string name, string surename, string type, string pesel, string card_number) : base(name, surename, type, pesel)
@@ -19,6 +19,11 @@ namespace PersonManagmentSystem
         public override void print()
         {
             Console.WriteLine($"{name} {surename}, {type} -> id: {card_number}, pesel: {pesel}");
+        }
+
+        public override string ToString()
+        {
+            return name + ";" + surename + ";" + pesel + ";" + card_number + ";" + type;
         }
     }
 }
