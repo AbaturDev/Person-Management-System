@@ -14,9 +14,9 @@ namespace ListOfPersons
 
             PersonList list = new PersonList();
 
-            /*list.addPerson(new Student("Jan", "Broski", "Student", "12345678901", "123456"));
+            list.addPerson(new Student("Jan", "Broski", "Student", "12345678901", "123456"));
             list.addPerson(new Student("Walter", "White", "Student", "12345678901", "272345"));
-            list.addPerson(new Student("John", "Snow", "Employee", "12345678901", "33214"));*/
+            list.addPerson(new Employee("John", "Snow", "Employee", "12345678901", "33214"));
 
             bool exit = false;
 

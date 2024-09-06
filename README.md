@@ -14,10 +14,10 @@ The system allows you to add, remove, and display people in a list, save the lis
 ## Usage
 After compiling and running the project, you can interact with the system through the console interface.
 ### Example usage
-1. _Adding a student or employee_: You can add students or employees to the list, by provading their properties.
-2. _Displaying the list_: You can display the whole list or filter by students or employees.
-3. _Finding person_: You can find and display student/employee by providing their pesel.
-4. _File operations_: You can save/load the list from/to a text file.
+1. **Adding a student or employee**: You can add students or employees to the list, by provading their properties.
+2. **Displaying the list**: You can display the whole list or filter by students or employees.
+3. **Finding person**: You can find and display student/employee by providing their pesel.
+4. **File operations**: You can save/load the list from/to a text file.
 
 ### Sample Output
 ```
@@ -29,7 +29,7 @@ There are 3 people on the list
 ```
 
 ## Classes and Structure
-* _Person(abstract)_: Represents a general person with properties such as `name`, `surname`, `pesel`, and `type`. The Person class is abstract and must be extended by specific types of people.
-* _Student_: Extends `Person` and adds an `index` property specific to students.
-* _Employee_: Extends `Person` and adds a `card_number` property specific to employees.
-* _PersonList_: Manages a list of `Person` objects, providing methods to operate on a list. This class also handles file operations like saving to and loading from a text file.
+* **Person(abstract)**: Represents a general person with properties such as `name`, `surname`, `pesel`, and `type`. The Person class is abstract and must be extended by specific types of people.
+* **Student**: Extends `Person` and adds an `index` property specific to students.
+* **Employee**: Extends `Person` and adds a `card_number` property specific to employees.
+* **PersonList**: Manages a list of `Person` objects, providing methods to operate on a list. This class also handles file operations like saving to and loading from a text file.
