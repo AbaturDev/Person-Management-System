@@ -8,22 +8,22 @@ namespace PersonManagmentSystem
 {
     internal class Student : Person
     {
-        public string index { get; set; }
+        public string Index { get; set; }
 
         public Student() : this("Name", "Surename", "Student", "00000000000", "000000") { }
         public Student(string name, string surename, string type, string pesel, string index) : base(name, surename, type, pesel)
         {
-            this.index = index;
+            Index = index;
         }
 
-        public override void print()
+        public override void Print()
         {
-            Console.WriteLine($"{name} {surename}, {type} -> index: {index}, pesel: {pesel}");
+            Console.WriteLine($"{Name} {Surename}, {Type} -> index: {Index}, pesel: {pesel}");
         }
 
         public override string ToString()
         {
-            return name + ";" + surename + ";" + pesel + ";" + index + ";" + type;
+            return Name + ";" + Surename + ";" + pesel + ";" + Index + ";" + Type;
         }
     }
 }

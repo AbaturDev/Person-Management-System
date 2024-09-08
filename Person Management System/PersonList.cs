@@ -11,68 +11,68 @@ namespace PersonManagmentSystem
     {
         private List<Person> persons = new List<Person>();
 
-        public void addPerson(Person person)
+        public void AddPerson(Person person)
         {
             persons.Add(person);
         }
 
-        public void removePersonByPesel(string pesel)
+        public void RemovePersonByPesel(string pesel)
         {
-            Person temp = persons.FirstOrDefault( e => e.getPesel() == pesel );
+            Person temp = persons.FirstOrDefault( e => e.GetPesel() == pesel );
             persons.Remove(temp);
         }
 
-        public Person getPersonbyPesel(string pesel)
+        public Person GetPersonbyPesel(string pesel)
         {
-            return persons.FirstOrDefault(e => e.getPesel() == pesel);
+            return persons.FirstOrDefault(e => e.GetPesel() == pesel);
         }
 
-        public void display()
+        public void Display()
         {
             Console.WriteLine("~~~~List of Persons~~~~");
             foreach (Person element in persons)
             {
-                element.print();
+                element.Print();
             }
-            Console.WriteLine("There are " + getPersonsCount() + " people on the list");
+            Console.WriteLine("There are " + GetPersonsCount() + " people on the list");
         }
 
-        public void displayStudents()
+        public void DisplayStudents()
         {
             Console.WriteLine("~~~~List of Students~~~~");
-            List<Person> students = persons.Where(e => e.getType() == "Student").ToList();
+            List<Person> students = persons.Where(e => e.Type == "Student").ToList();
             foreach (Person element in students)
             {
-                element.print();
+                element.Print();
             }
-            Console.WriteLine("There are " + getStudentsCount() + " students on the list");
+            Console.WriteLine("There are " + GetStudentsCount() + " students on the list");
         }
 
-        public void displayEmployees()
+        public void DisplayEmployees()
         {
             Console.WriteLine("~~~~List of Employees~~~~");
-            List<Person> students = persons.Where(e => e.getType() == "Employee").ToList();
+            List<Person> students = persons.Where(e => e.Type == "Employee").ToList();
             foreach (Person element in students)
             {
-                element.print();
+                element.Print();
             }
-            Console.WriteLine("There are " + getEmployeeCount() + " employees on the list");
+            Console.WriteLine("There are " + GetEmployeeCount() + " employees on the list");
 
         }
 
-        public int getPersonsCount()
+        public int GetPersonsCount()
         {
             return persons.Count;
         }
 
-        public int getStudentsCount()
+        public int GetStudentsCount()
         {
-            return persons.Where(e => e.getType() == "Student").Count();
+            return persons.Where(e => e.Type == "Student").Count();
         }
 
-        public int getEmployeeCount()
+        public int GetEmployeeCount()
         {
-            return persons.Where(e => e.getType() == "Employee").Count();
+            return persons.Where(e => e.Type == "Employee").Count();
         }
 
         /// <summary>

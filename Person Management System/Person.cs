@@ -9,47 +9,49 @@ namespace PersonManagmentSystem
 {
     internal abstract class Person
     {
-        public string name { get; set; }
-        public string surename { get; set; }
-        public string type { get; set; }
+        public string Name { get; set; }
+        public string Surename { get; set; }
+        public string Type { get; set; }
 
         protected string pesel;
 
         public Person() : this("Name", "Surename", "Person", "00000000000") { }
         public Person(string name, string surename, string type, string pesel)
         {
-            this.name = name;
-            this.surename = surename;
-            this.type = type;
+            Name = name;
+            Surename = surename;
+            Type = type;
             this.pesel = pesel;
         }
 
         /// <summary>
         /// Method to set pesel for person. Throw exception in case of wrong lenght of pesel
         /// </summary>
-        public void setPesel(string pesel)
+        /// <returns> 
+        /// true - pesel is correct and has been set for object
+        /// false - pesel is invalid 
+        /// </returns>
+        public bool SetPesel(string pesel)
         {
             if(pesel.Length > 11)
             {
-                throw new Exception("Pesel is too long");
+                Console.WriteLine("Pesel is too long");
+                return false;
             }
             else if(pesel.Length < 11)
             {
-                throw new Exception("Pesel is too short");
+                Console.WriteLine("Pesel is too short");
+                return false;
             }
             this.pesel = pesel;
+            return true;
         }
-        public string getPesel()
+        public string GetPesel()
         {
             return pesel;
         }
 
-        public string getType()
-        {
-            return type;
-        }
-
-        public abstract void print();
+        public abstract void Print();
         public override abstract string ToString();
 
     }

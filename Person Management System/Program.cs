@@ -14,9 +14,9 @@ namespace ListOfPersons
 
             PersonList list = new PersonList();
 
-            list.addPerson(new Student("Jan", "Broski", "Student", "12345678901", "123456"));
-            list.addPerson(new Student("Walter", "White", "Student", "12345678901", "272345"));
-            list.addPerson(new Employee("John", "Snow", "Employee", "12345678901", "33214"));
+            list.AddPerson(new Student("Jan", "Broski", "Student", "12345678901", "123456"));
+            list.AddPerson(new Student("Walter", "White", "Student", "12345678901", "272345"));
+            list.AddPerson(new Employee("John", "Snow", "Employee", "12345678901", "33214"));
 
             bool exit = false;
 
@@ -49,18 +49,21 @@ namespace ListOfPersons
                         Student student = new Student();
 
                         Console.Write("Name: ");
-                        student.name = Console.ReadLine();
+                        student.Name = Console.ReadLine();
 
                         Console.Write("Surename: ");
-                        student.surename = Console.ReadLine();
+                        student.Surename = Console.ReadLine();
 
                         Console.Write("Pesel: ");
-                        student.setPesel(Console.ReadLine());
+                        if(!student.SetPesel(Console.ReadLine()))
+                        {
+                            break;
+                        }
 
                         Console.Write("Index: ");
-                        student.index = Console.ReadLine();
+                        student.Index = Console.ReadLine();
 
-                        list.addPerson(student);
+                        list.AddPerson(student);
 
                         break;
 
@@ -68,45 +71,48 @@ namespace ListOfPersons
                         Employee employee = new Employee();
 
                         Console.Write("Name: ");
-                        employee.name = Console.ReadLine();
+                        employee.Name = Console.ReadLine();
 
                         Console.Write("Surename: ");
-                        employee.surename = Console.ReadLine();
+                        employee.Surename = Console.ReadLine();
 
                         Console.Write("Pesel: ");
-                        employee.setPesel(Console.ReadLine());
+                        if(!employee.SetPesel(Console.ReadLine()))
+                        {
+                            break;
+                        }
 
                         Console.Write("Card number: ");
-                        employee.card_number = Console.ReadLine();
+                        employee.Card_Number = Console.ReadLine();
 
-                        list.addPerson(employee);
+                        list.AddPerson(employee);
 
                         break;
 
                     case 3:
                         Console.WriteLine("Enter the pesel of the person");
                         var input_pesel = Console.ReadLine();
-                        list.removePersonByPesel(input_pesel);
+                        list.RemovePersonByPesel(input_pesel);
                         break;
 
                     case 4:
                         Console.WriteLine("Enter the pesel of the person");
                         var find = Console.ReadLine();
-                        var find_person = list.getPersonbyPesel(find);
-                        find_person.print();
+                        var find_person = list.GetPersonbyPesel(find);
+                        find_person.Print();
                         
                         break;
 
                     case 5:
-                        list.display();
+                        list.Display();
                         break;
 
                     case 6:
-                        list.displayStudents();
+                        list.DisplayStudents();
                         break;
 
                     case 7:
-                        list.displayEmployees();
+                        list.DisplayEmployees();
                         break;
 
                     case 8:
